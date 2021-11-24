@@ -4,7 +4,7 @@ class Student:
         self.name = name
         self.mark = mark
 
-    def is_passed(self, ) -> bool:
+    def is_passed(self) -> bool:
         if self.mark > 50:
             return True
         else:
