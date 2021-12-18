@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from flask_restful import Api
+from flask_restful import Resource, Api
 from services.get_movies import get_movies
 from services.get_tags import get_tags
 from services.get_links import get_links
