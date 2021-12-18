@@ -8,13 +8,13 @@ from services.get_ratings import get_ratings
 app = Flask(__name__)
 api = Api(app)
 
-movies = get_movies("/Users/agnieszka/Desktop/movies.csv")
+movies = get_movies("movies.csv")
 
-tags = get_tags("/Users/agnieszka/Desktop/tags.csv")
+tags = get_tags("tags.csv")
 
-links = get_links("/Users/agnieszka/Desktop/links.csv")
+links = get_links("links.csv")
 
-ratings = get_ratings("/Users/agnieszka/Desktop/ratings.csv")
+ratings = get_ratings("ratings.csv")
 
 
 class Movies(Resource):
