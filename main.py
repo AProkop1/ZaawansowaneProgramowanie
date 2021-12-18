@@ -17,11 +17,18 @@ links = get_links("links.csv")
 ratings = get_ratings("ratings.csv")
 
 
+class Home(Resource):
+    def get(self):
+        return {'hello': 'world'}
+
+api.add_resource(Home, '/')
+
+
 class Movies(Resource):
     def get(self):
         return jsonify(movies)
 
-api.add_resource(Movies, '/')
+api.add_resource(Movies, '/movies')
 
 
 class Links(Resource):
