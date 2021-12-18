@@ -17,25 +17,32 @@ links = get_links("/Users/agnieszka/Desktop/links.csv")
 ratings = get_ratings("/Users/agnieszka/Desktop/ratings.csv")
 
 
-@app.route('/movies', methods=['GET'])
-def get_movies():
-    return jsonify(movies)
+class Movies(Resource):
+    def get(self):
+        return jsonify(movies)
+
+api.add_resource(Movies, '/movies')
 
 
-@app.route('/tags', methods=['GET'])
-def get_tags():
-    return jsonify(tags)
+class Links(Resource):
+    def get(self):
+        return jsonify(links)
+
+api.add_resource(Links, '/links')
 
 
-@app.route('/links', methods=['GET'])
-def get_links():
-    return jsonify(links)
+class Ratings(Resource):
+    def get(self):
+        return jsonify(ratings)
+
+api.add_resource(Ratings, '/ratings')
 
 
-@app.route('/ratings', methods=['GET'])
-def get_ratings():
-    return jsonify(ratings)
+class Tags(Resource):
+    def get(self):
+        return jsonify(tags)
 
+api.add_resource(Tags, '/tags')
 
 if __name__ == '__main__':
     app.run(debug=True)
