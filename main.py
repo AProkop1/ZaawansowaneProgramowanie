@@ -21,7 +21,7 @@ class Movies(Resource):
     def get(self):
         return jsonify(movies)
 
-api.add_resource(Movies, '/movies')
+api.add_resource(Movies, '/')
 
 
 class Links(Resource):
