@@ -1,55 +1,25 @@
-from flask import Flask, jsonify
-from flask_restful import Resource, Api
-from services.get_movies import get_movies
-from services.get_tags import get_tags
-from services.get_links import get_links
-from services.get_ratings import get_ratings
+import pytesseract
+import cv2
 
-app = Flask(__name__)
-api = Api(app)
+pytesseract.pytesseract.tesseract_cmd = r'/usr/local/bin/tesseract'
 
-movies = get_movies("movies.csv")
-
-tags = get_tags("tags.csv")
-
-links = get_links("links.csv")
-
-ratings = get_ratings("ratings.csv")
+# lab_9
+def get_text(image_path: str) -> str:
+    img_1 = cv2.imread(image_path)
+    cv2.imshow('image', img_1)
+    cv2.waitKey(0)
+    text_1 = pytesseract.image_to_string(img_1)
+    return text_1
 
 
-class Home(Resource):
-    def get(self):
-        return {'hello': 'world'}
+# lab_10
+img_2 = cv2.imread('images/img_5.png')
+gray = cv2.cvtColor(img_2, cv2.COLOR_BGR2GRAY)
 
-api.add_resource(Home, '/')
+# converted_img
+converted_img = cv2.adaptiveThreshold(cv2.GaussianBlur(gray, (5, 5), 0), 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 31, 2)
+cv2.imshow('image', converted_img)
+cv2.waitKey(0)
 
-
-class Movies(Resource):
-    def get(self):
-        return jsonify(movies)
-
-api.add_resource(Movies, '/movies')
-
-
-class Links(Resource):
-    def get(self):
-        return jsonify(links)
-
-api.add_resource(Links, '/links')
-
-
-class Ratings(Resource):
-    def get(self):
-        return jsonify(ratings)
-
-api.add_resource(Ratings, '/ratings')
-
-
-class Tags(Resource):
-    def get(self):
-        return jsonify(tags)
-
-api.add_resource(Tags, '/tags')
-
-if __name__ == '__main__':
-    app.run(debug=True)
+text = pytesseract.image_to_string(converted_img)
+print(text)
