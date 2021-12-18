@@ -10,3 +10,4 @@ def get_tags(path):
         for i, line in enumerate(reader):
             tag = Tag(line[0], line[1], line[2], line[3])
             tags.append(tag.__dict__)
+    return tags

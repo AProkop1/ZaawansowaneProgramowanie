@@ -10,3 +10,4 @@ def get_ratings(path):
         for i, line in enumerate(reader):
             rating = Rating(line[0], line[1], line[2], line[3])
             ratings.append(rating.__dict__)
+    return ratings
