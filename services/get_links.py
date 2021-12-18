@@ -10,3 +10,4 @@ def get_links(path):
         for i, line in enumerate(reader):
             link = Link(line[0], line[1], line[2])
             links.append(link.__dict__)
+    return links
