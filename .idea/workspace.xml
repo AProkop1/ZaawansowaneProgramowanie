@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7307ebb-b757-47f8-b9a4-9d2d1f404912" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/links.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/link.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/movie.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/rating.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/tag.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratings.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/get_links.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/get_movies.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/get_ratings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/get_tags.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tags.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
