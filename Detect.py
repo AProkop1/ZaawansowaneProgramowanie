@@ -13,21 +13,17 @@ def detect_people(file_name: str) -> None:
     image = cv2.imread(file_name)
 
     # Resizing the Image
-    image = imutils.resize(image, width=min(800, image.shape[1]))
+    image = imutils.resize(image, width=min(400, image.shape[1]))
 
     # Detecting all the regions in the image with pedestrians
     (rects, weights) = hog.detectMultiScale(image, winStride=(4, 4),
                                             padding=(8, 8), scale=1.05)
 
-    # Drawing boxes
-    for (x, y, w, h) in rects:
-        cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)
-
     # Applying non-maxima suppression
     rects = np.array([[x, y, x + w, y + h] for (x, y, w, h) in rects])
     pick = non_max_suppression(rects, probs=None, overlapThresh=0.65)
 
-    # Drawing thee final boxes
+    # Drawing final boxes
     for (xA, yA, xB, yB) in pick:
         cv2.rectangle(image, (xA, yA), (xB, yB), (0, 255, 0), 2)
 
